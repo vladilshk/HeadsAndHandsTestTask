@@ -74,15 +74,15 @@ public class Creature {
     }
 
     private void setAttack(int attack) throws InvalidAttackValueException {
-        if (attack < 1){
-            throw new InvalidAttackValueException("Wrong attack value. Attack can't be less then 1!!!");
+        if (attack <= 0 || attack > 30){
+            throw new InvalidAttackValueException("Wrong attack value. Attack can't be less then 1 or more then 30!!!");
         }
         this.attack = attack;
     }
 
     private void setDefense(int defense) throws InvalidDefenseValueException {
-        if (defense < 1){
-            throw new InvalidDefenseValueException("Wrong defense value. Defense can't be less then 1!!!");
+        if (defense <= 0 || defense > 30){
+            throw new InvalidDefenseValueException("Wrong defense value. Defense can't be less then 1 or more then 30!!!");
         }
         this.defense = defense;
     }
