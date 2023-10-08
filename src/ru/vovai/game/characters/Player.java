@@ -13,7 +13,7 @@ public class Player extends Creature {
     }
 
     public int heal() throws InvalidHealthException {
-        if (healCount > 0) {
+        if (healCount > 0 && getHealth() > 0) {
             int healAmount = (int) (maxHealth * 0.3); // Исцеление на 30% от максимального здоровья
             setHealth(getHealth() + healAmount);
             if (getHealth() > maxHealth) {

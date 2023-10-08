@@ -6,4 +6,5 @@ public class Monster extends Creature {
         super(attack, defense, health, minDamage, maxDamage);
     }
 
+
 }
