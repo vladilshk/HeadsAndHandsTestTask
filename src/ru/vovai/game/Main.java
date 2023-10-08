@@ -14,13 +14,6 @@ public class Main {
 
 
         while (player.getHealth() > 0 && monster.getHealth() > 0) {
-            if (Creature.calculateModifier(player.getAttack(), monster.getDefense()) <= 0 ||
-                    Creature.calculateModifier(monster.getAttack(), player.getDefense()) <= 0){
-                System.out.println("Игрок и монстр не смогут нанести урон друг другу(((");
-                break;
-            }
-
-
             // Игрок атакует монстра
             int playerModifier = Creature.calculateModifier(player.getAttack(), monster.getDefense());
             if (dice.rollAndCheckSuccess(playerModifier)) {
@@ -56,9 +49,7 @@ public class Main {
             System.out.println("Здоровье игрока: " + player.getHealth() + " |||| " + "Здоровье монстра: " + monster.getHealth() + "\n");
         }
 
-        if (player.getHealth() > 0 && monster.getHealth() > 0){
-            System.out.println("Ничья");
-        } else if (player.getHealth() <= 0) {
+        if (player.getHealth() <= 0) {
             System.out.println("Игрок проиграл!");
         } else {
             System.out.println("Игрок победил!");

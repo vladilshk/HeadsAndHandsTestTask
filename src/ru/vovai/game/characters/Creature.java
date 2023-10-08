@@ -30,12 +30,17 @@ public class Creature {
         }
     }
 
+
     public int calculateDamage() {
         return new Random().nextInt(getMaxDamage() - getMinDamage() + 1) + getMinDamage();
     }
 
     public static int calculateModifier(int thirstCreatureAttack, int secondCreatureDefense){
-        return thirstCreatureAttack - secondCreatureDefense + 1;
+        int modifier = thirstCreatureAttack - secondCreatureDefense + 1;
+        if (modifier <= 0){
+            return 1;
+        }
+        return modifier;
     }
 
     public int getMaxDamage() {
